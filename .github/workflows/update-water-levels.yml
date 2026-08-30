@@ -1,0 +1,48 @@
+name: Update reservoir water levels
+
+on:
+  schedule:
+    # 每天北京时间 09:17（UTC 01:17）运行，读取已发布的日水位记录。
+    - cron: "17 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reservoir-water-level-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch and merge daily reservoir levels
+        run: python scripts/update_water_levels.py
+
+      - name: Validate all map data
+        run: python scripts/validate_data.py
+
+      - name: Commit checked and newly available records
+        shell: bash
+        run: |
+          if git diff --quiet -- data/water-levels.json data/metadata.json; then
+            echo "No water-level changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/water-levels.json data/metadata.json
+          git commit -m "data: update reservoir water levels"
+          git push
