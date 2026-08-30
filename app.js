@@ -63,7 +63,14 @@ async function loadJson(path, fallback = EMPTY_COLLECTION) {
 
 function isRecent(feature) {
   const time = Number(feature.properties?.timestamp || Date.parse(feature.properties?.time));
-  return Number.isFinite(time) && Date.now() - time <= MONTH_MS;
+  const age = Date.now() - time;
+  return Number.isFinite(time) && age >= 0 && age <= MONTH_MS;
+}
+
+function isPreviousMonth(feature) {
+  const time = Number(feature.properties?.timestamp || Date.parse(feature.properties?.time));
+  const age = Date.now() - time;
+  return Number.isFinite(time) && age > MONTH_MS && age <= MONTH_MS * 2;
 }
 
 function filteredDams() {
@@ -397,6 +404,10 @@ function addMapData() {
     type: "geojson",
     data: { ...appState.earthquakes, features: appState.earthquakes.features.filter(isRecent) },
   });
+  map.addSource("previous-month-earthquakes", {
+    type: "geojson",
+    data: { ...appState.earthquakes, features: appState.earthquakes.features.filter(isPreviousMonth) },
+  });
   map.addLayer({
     id: "quake-clusters", type: "circle", source: "earthquakes", filter: ["has", "point_count"],
     paint: {
@@ -409,6 +420,13 @@ function addMapData() {
     id: "quake-cluster-count", type: "symbol", source: "earthquakes", filter: ["has", "point_count"],
     layout: { "text-field": ["get", "point_count_abbreviated"], "text-size": 10 },
     paint: { "text-color": "#fff8ed" },
+  });
+  map.addLayer({
+    id: "previous-month-halo", type: "circle", source: "previous-month-earthquakes",
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["get", "mag"], 3, 8, 7, 22],
+      "circle-color": "rgba(77,114,201,.1)", "circle-stroke-color": "#4d72c9", "circle-stroke-width": 2, "circle-blur": .05,
+    },
   });
   map.addLayer({
     id: "recent-halo", type: "circle", source: "recent-earthquakes",
@@ -468,6 +486,9 @@ function updateSourcesAndStats() {
   if (appState.map?.getSource("recent-earthquakes")) {
     appState.map.getSource("recent-earthquakes").setData({ ...quakes, features: quakes.features.filter(isRecent) });
   }
+  if (appState.map?.getSource("previous-month-earthquakes")) {
+    appState.map.getSource("previous-month-earthquakes").setData({ ...quakes, features: quakes.features.filter(isPreviousMonth) });
+  }
   const magnitudes = quakes.features.map((feature) => Number(feature.properties.mag)).filter(Number.isFinite);
   dom.damCount.textContent = dams.features.length.toLocaleString("zh-CN");
   dom.quakeCount.textContent = quakes.features.length.toLocaleString("zh-CN");
@@ -482,6 +503,11 @@ function setLayerVisibility(layerIds, visible) {
 }
 
 function bindControls() {
+  const recencyToggleRow = dom.toggleRecent.closest(".switch-row");
+  const recencyLabel = recencyToggleRow?.querySelector("span");
+  const recencyText = [...(recencyLabel?.childNodes || [])].find((node) => node.nodeType === Node.TEXT_NODE);
+  if (recencyText) recencyText.textContent = "近60天分段高亮";
+  if (recencyToggleRow) recencyToggleRow.title = "橙色：0—30天；靛蓝色：31—60天";
   dom.magnitudeRange.addEventListener("input", () => {
     appState.filters.magnitude = Number(dom.magnitudeRange.value);
     dom.magnitudeValue.textContent = appState.filters.magnitude.toFixed(1);
@@ -496,7 +522,7 @@ function bindControls() {
   dom.basinSelect.addEventListener("change", () => { appState.filters.basin = dom.basinSelect.value; updateSourcesAndStats(); });
   dom.toggleDams.addEventListener("change", () => setLayerVisibility(["dam-halos", "dam-points"], dom.toggleDams.checked));
   dom.toggleQuakes.addEventListener("change", () => setLayerVisibility(["quake-clusters", "quake-cluster-count", "quake-points"], dom.toggleQuakes.checked));
-  dom.toggleRecent.addEventListener("change", () => setLayerVisibility(["recent-halo"], dom.toggleRecent.checked));
+  dom.toggleRecent.addEventListener("change", () => setLayerVisibility(["recent-halo", "previous-month-halo"], dom.toggleRecent.checked));
   dom.toggleWaterways.addEventListener("change", () => setLayerVisibility(["waterways-line"], dom.toggleWaterways.checked));
   dom.drawerClose.addEventListener("click", closeDrawer);
   document.addEventListener("pointerdown", (event) => {
