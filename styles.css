@@ -123,6 +123,11 @@ select { width: 100%; height: 38px; padding: 0 10px; border: 1px solid var(--lin
 .depth-swatch { width: 12px; height: 5px; }
 .depth-swatch.shallow { background: #ef5d3b; }
 .depth-swatch.deep { background: #84475b; }
+.recency-caption { top: 18px; bottom: auto; }
+.recency-ring { width: 11px; height: 11px; border: 2px solid currentColor; border-radius: 50%; background: transparent; }
+.ring-recent { color: var(--recent); box-shadow: 0 0 0 3px rgba(255,180,59,.13); }
+.ring-previous { color: #4d72c9; box-shadow: 0 0 0 3px rgba(77,114,201,.1); }
+.ring-third { color: #4b9b6c; box-shadow: 0 0 0 3px rgba(75,155,108,.1); }
 
 .detail-drawer {
   position: absolute;
@@ -221,6 +226,7 @@ select { width: 100%; height: 38px; padding: 0 10px; border: 1px solid var(--lin
   .control-rail.is-open { transform: translateY(0); }
   .mobile-filter-button { display: block; position: absolute; right: 12px; bottom: 14px; z-index: 8; height: 42px; padding: 0 16px; border: 1px solid var(--line); color: var(--ink); background: var(--panel); box-shadow: 0 8px 24px rgba(16,45,60,.12); }
   .map-caption { left: 10px; bottom: 64px; max-width: calc(100vw - 20px); }
+  .recency-caption { top: 10px; bottom: auto; }
   .detail-drawer { top: auto; right: 10px; bottom: 10px; left: 10px; width: auto; max-height: 62vh; transform: translateY(calc(100% + 20px)); }
   .detail-drawer.is-open { transform: translateY(0); }
   .loading-screen { inset: 66px 0 0; }

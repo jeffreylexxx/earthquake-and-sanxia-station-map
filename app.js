@@ -73,6 +73,12 @@ function isPreviousMonth(feature) {
   return Number.isFinite(time) && age > MONTH_MS && age <= MONTH_MS * 2;
 }
 
+function isThirdMonth(feature) {
+  const time = Number(feature.properties?.timestamp || Date.parse(feature.properties?.time));
+  const age = Date.now() - time;
+  return Number.isFinite(time) && age > MONTH_MS * 2 && age <= MONTH_MS * 3;
+}
+
 function filteredDams() {
   if (appState.filters.basin === "all") return appState.dams;
   return {
@@ -408,6 +414,10 @@ function addMapData() {
     type: "geojson",
     data: { ...appState.earthquakes, features: appState.earthquakes.features.filter(isPreviousMonth) },
   });
+  map.addSource("third-month-earthquakes", {
+    type: "geojson",
+    data: { ...appState.earthquakes, features: appState.earthquakes.features.filter(isThirdMonth) },
+  });
   map.addLayer({
     id: "quake-clusters", type: "circle", source: "earthquakes", filter: ["has", "point_count"],
     paint: {
@@ -420,6 +430,13 @@ function addMapData() {
     id: "quake-cluster-count", type: "symbol", source: "earthquakes", filter: ["has", "point_count"],
     layout: { "text-field": ["get", "point_count_abbreviated"], "text-size": 10 },
     paint: { "text-color": "#fff8ed" },
+  });
+  map.addLayer({
+    id: "third-month-halo", type: "circle", source: "third-month-earthquakes",
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["get", "mag"], 3, 7, 7, 20],
+      "circle-color": "rgba(75,155,108,.1)", "circle-stroke-color": "#4b9b6c", "circle-stroke-width": 2, "circle-blur": .04,
+    },
   });
   map.addLayer({
     id: "previous-month-halo", type: "circle", source: "previous-month-earthquakes",
@@ -489,6 +506,9 @@ function updateSourcesAndStats() {
   if (appState.map?.getSource("previous-month-earthquakes")) {
     appState.map.getSource("previous-month-earthquakes").setData({ ...quakes, features: quakes.features.filter(isPreviousMonth) });
   }
+  if (appState.map?.getSource("third-month-earthquakes")) {
+    appState.map.getSource("third-month-earthquakes").setData({ ...quakes, features: quakes.features.filter(isThirdMonth) });
+  }
   const magnitudes = quakes.features.map((feature) => Number(feature.properties.mag)).filter(Number.isFinite);
   dom.damCount.textContent = dams.features.length.toLocaleString("zh-CN");
   dom.quakeCount.textContent = quakes.features.length.toLocaleString("zh-CN");
@@ -506,8 +526,8 @@ function bindControls() {
   const recencyToggleRow = dom.toggleRecent.closest(".switch-row");
   const recencyLabel = recencyToggleRow?.querySelector("span");
   const recencyText = [...(recencyLabel?.childNodes || [])].find((node) => node.nodeType === Node.TEXT_NODE);
-  if (recencyText) recencyText.textContent = "近60天分段高亮";
-  if (recencyToggleRow) recencyToggleRow.title = "橙色：0—30天；靛蓝色：31—60天";
+  if (recencyText) recencyText.textContent = "近90天分段高亮";
+  if (recencyToggleRow) recencyToggleRow.title = "橙色：0—30天；蓝色：31—60天；绿色：61—90天";
   dom.magnitudeRange.addEventListener("input", () => {
     appState.filters.magnitude = Number(dom.magnitudeRange.value);
     dom.magnitudeValue.textContent = appState.filters.magnitude.toFixed(1);
@@ -522,7 +542,7 @@ function bindControls() {
   dom.basinSelect.addEventListener("change", () => { appState.filters.basin = dom.basinSelect.value; updateSourcesAndStats(); });
   dom.toggleDams.addEventListener("change", () => setLayerVisibility(["dam-halos", "dam-points"], dom.toggleDams.checked));
   dom.toggleQuakes.addEventListener("change", () => setLayerVisibility(["quake-clusters", "quake-cluster-count", "quake-points"], dom.toggleQuakes.checked));
-  dom.toggleRecent.addEventListener("change", () => setLayerVisibility(["recent-halo", "previous-month-halo"], dom.toggleRecent.checked));
+  dom.toggleRecent.addEventListener("change", () => setLayerVisibility(["recent-halo", "previous-month-halo", "third-month-halo"], dom.toggleRecent.checked));
   dom.toggleWaterways.addEventListener("change", () => setLayerVisibility(["waterways-line"], dom.toggleWaterways.checked));
   dom.drawerClose.addEventListener("click", closeDrawer);
   document.addEventListener("pointerdown", (event) => {
