@@ -1,0 +1,9 @@
+{
+  "updatedAt": "2026-08-30T12:05:46Z",
+  "damCount": 39,
+  "earthquakeCount": 599,
+  "recent30DayCount": 13,
+  "waterLevelRecordCount": 449,
+  "waterLevelUpdatedAt": "2026-08-30T12:05:46Z",
+  "note": "地震与水位记录永久保留；最近30天地震由前端动态高亮，水位缺失日不插值。"
+}

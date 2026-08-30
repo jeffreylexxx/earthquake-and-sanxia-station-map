@@ -1,0 +1,904 @@
+{
+  "type": "FeatureCollection",
+  "generatedAt": "2026-08-30T10:54:49Z",
+  "coordinateNote": "坐标仅用于地图定位，来自 OpenStreetMap Nominatim；工程参数以各条官方来源为准。",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.0075702,
+          30.8261831
+        ]
+      },
+      "properties": {
+        "id": "three-gorges",
+        "name": "三峡大坝",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 175,
+        "damHeightM": 185,
+        "totalStorageBillionM3": 39.3,
+        "normalAreaKm2": 1084,
+        "sourceTitle": "中国三峡集团·三峡工程",
+        "sourceUrl": "https://www.ctg.com.cn/cypc/zxgg99/sxgc3/index.html",
+        "sourceDate": "2025-07-24",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.3935807,
+          28.6454421
+        ]
+      },
+      "properties": {
+        "id": "xiangjiaba",
+        "name": "向家坝水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 380,
+        "damHeightM": 162,
+        "totalStorageBillionM3": 5.163,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·向家坝工程技术特点",
+        "sourceUrl": "https://www.ctg.com.cn/sxjt/zt98/jsjxjbsdzgcjlzt/_312643/2024081109013570013/index.html",
+        "sourceDate": "2012-11-06",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6434987,
+          28.2577539
+        ]
+      },
+      "properties": {
+        "id": "xiluodu",
+        "name": "溪洛渡水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 600,
+        "damHeightM": 285.5,
+        "totalStorageBillionM3": 12.67,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团电子采购平台·溪洛渡水库影响区监测公告",
+        "sourceUrl": "https://eps.ctg.com.cn/cms/channel/1ywgg1/240615891.htm",
+        "sourceDate": "2025-02-26",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.999943,
+          26.7191015
+        ]
+      },
+      "properties": {
+        "id": "baihetan",
+        "name": "白鹤滩水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 825,
+        "damHeightM": 289,
+        "totalStorageBillionM3": 20.627,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·白鹤滩水电站资料",
+        "sourceUrl": "https://www.ctg.com.cn/sxjt/bhtkgzt/hsbht.pdf",
+        "sourceDate": "2017-08-03",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.63403,
+          26.32483
+        ]
+      },
+      "properties": {
+        "id": "wudongde",
+        "name": "乌东德水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 975,
+        "damHeightM": 270,
+        "totalStorageBillionM3": 7.408,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·水力发电业务",
+        "sourceUrl": "https://www.ctg.com.cn/cypc/ywtx/slfdyw71/index.html",
+        "sourceDate": "2026-07-24",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.4372904,
+          26.5209324
+        ]
+      },
+      "properties": {
+        "id": "guanyinyan",
+        "name": "观音岩水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 1134,
+        "damHeightM": 159,
+        "totalStorageBillionM3": 2.072,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·金沙江中下游梯级资料",
+        "sourceUrl": "https://www.ctg.com.cn/sxjt/template/page/jsjbhtsdz/styp.pdf",
+        "sourceDate": "2015-12-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.81646,
+          26.20144
+        ]
+      },
+      "properties": {
+        "id": "ludila",
+        "name": "鲁地拉水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 1223,
+        "damHeightM": 140,
+        "totalStorageBillionM3": 1.718,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·金沙江中下游梯级资料",
+        "sourceUrl": "https://www.ctg.com.cn/sxjt/template/page/jsjbhtsdz/styp.pdf",
+        "sourceDate": "2015-12-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.4140006,
+          26.5296066
+        ]
+      },
+      "properties": {
+        "id": "longkaikou",
+        "name": "龙开口水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 1298,
+        "damHeightM": 119,
+        "totalStorageBillionM3": 0.558,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·金沙江中下游梯级资料",
+        "sourceUrl": "https://www.ctg.com.cn/sxjt/template/page/jsjbhtsdz/styp.pdf",
+        "sourceDate": "2015-12-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.4469611,
+          26.8080503
+        ]
+      },
+      "properties": {
+        "id": "jinanqiao",
+        "name": "金安桥水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 1418,
+        "damHeightM": 160,
+        "totalStorageBillionM3": 0.913,
+        "normalAreaKm2": null,
+        "sourceTitle": "三峡资本·金安桥水电站",
+        "sourceUrl": "https://tgdc.ctg.com.cn/tgdc/858418/858421/2024080904143329510/index.html",
+        "sourceDate": "2013-11-14",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.5054775,
+          27.3481312
+        ]
+      },
+      "properties": {
+        "id": "ahai",
+        "name": "阿海水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 1504,
+        "damHeightM": 130,
+        "totalStorageBillionM3": 0.882,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·金沙江中下游梯级资料",
+        "sourceUrl": "https://www.ctg.com.cn/sxjt/template/page/jsjbhtsdz/styp.pdf",
+        "sourceDate": "2015-12-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.2906639,
+          27.6790416
+        ]
+      },
+      "properties": {
+        "id": "liyuan",
+        "name": "梨园水电站",
+        "basin": "长江—金沙江干流",
+        "normalLevelM": 1618,
+        "damHeightM": 155,
+        "totalStorageBillionM3": 0.727,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·金沙江中下游梯级资料",
+        "sourceUrl": "https://www.ctg.com.cn/sxjt/template/page/jsjbhtsdz/styp.pdf",
+        "sourceDate": "2015-12-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.00972,
+          30.19444
+        ]
+      },
+      "properties": {
+        "id": "lianghekou",
+        "name": "两河口水电站",
+        "basin": "雅砻江",
+        "normalLevelM": 2865,
+        "damHeightM": 295,
+        "totalStorageBillionM3": 10.154,
+        "normalAreaKm2": null,
+        "sourceTitle": "雅砻江流域水电开发有限公司·两河口水电站",
+        "sourceUrl": "https://www.ylhdc.com.cn/gtylj/gsyw/dlsc/webinfo/2020/10/1605515622357970.htm",
+        "sourceDate": "2020-10-29",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.2000171,
+          28.6505223
+        ]
+      },
+      "properties": {
+        "id": "yangfanggou",
+        "name": "杨房沟水电站",
+        "basin": "雅砻江",
+        "normalLevelM": 2094,
+        "damHeightM": 155,
+        "totalStorageBillionM3": 0.51248,
+        "normalAreaKm2": null,
+        "sourceTitle": "雅砻江流域水电开发有限公司·杨房沟水电站开工",
+        "sourceUrl": "https://www.ylhdc.com.cn/gtylj/xwzx/mtjj/webinfo/2020/11/160671926383365941.htm",
+        "sourceDate": "2015-07-30",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6297463,
+          28.183344
+        ]
+      },
+      "properties": {
+        "id": "jinping-i",
+        "name": "锦屏一级水电站",
+        "basin": "雅砻江",
+        "normalLevelM": 1880,
+        "damHeightM": 305,
+        "totalStorageBillionM3": 7.76,
+        "normalAreaKm2": null,
+        "sourceTitle": "雅砻江流域水电开发有限公司·锦屏一级水电站",
+        "sourceUrl": "https://www.ylhdc.com.cn/gtylj/gsyw/lykf/snzykf/webinfo/2020/11/1606121007318216.htm",
+        "sourceDate": "2020-11-05",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.7917823,
+          28.138612
+        ]
+      },
+      "properties": {
+        "id": "jinping-ii",
+        "name": "锦屏二级水电站",
+        "basin": "雅砻江",
+        "normalLevelM": 1646,
+        "damHeightM": 37,
+        "totalStorageBillionM3": 0.014,
+        "normalAreaKm2": null,
+        "sourceTitle": "雅砻江流域水电开发有限公司·水能资源开发",
+        "sourceUrl": "https://www.ylhdc.com.cn/gtylj/gsyw/lykf/snzykf/A37020202index_1.htm",
+        "sourceDate": "2026-06-15",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.8780045,
+          27.8189002
+        ]
+      },
+      "properties": {
+        "id": "guandi",
+        "name": "官地水电站",
+        "basin": "雅砻江",
+        "normalLevelM": 1330,
+        "damHeightM": 168,
+        "totalStorageBillionM3": 0.76,
+        "normalAreaKm2": null,
+        "sourceTitle": "雅砻江流域水电开发有限公司·水能资源开发",
+        "sourceUrl": "https://www.ylhdc.com.cn/gtylj/gsyw/lykf/snzykf/A37020202index_1.htm",
+        "sourceDate": "2026-06-15",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.7854729,
+          26.8231355
+        ]
+      },
+      "properties": {
+        "id": "ertan",
+        "name": "二滩水电站",
+        "basin": "雅砻江",
+        "normalLevelM": 1200,
+        "damHeightM": 240,
+        "totalStorageBillionM3": 5.8,
+        "normalAreaKm2": null,
+        "sourceTitle": "雅砻江流域水电开发有限公司·二滩资料",
+        "sourceUrl": "https://www.ylhdc.com.cn/gtylj/xwzx/mtjj/webinfo/2020/10/160345293730362022.htm",
+        "sourceDate": "2008-02-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.8513922,
+          26.7072704
+        ]
+      },
+      "properties": {
+        "id": "tongzilin",
+        "name": "桐子林水电站",
+        "basin": "雅砻江",
+        "normalLevelM": 1015,
+        "damHeightM": 69.5,
+        "totalStorageBillionM3": 0.0912,
+        "normalAreaKm2": null,
+        "sourceTitle": "雅砻江流域水电开发有限公司·桐子林水电站",
+        "sourceUrl": "https://www.ylhdc.com.cn/gtylj/xwzx/zhxw/webinfo/2020/10/160345293535644045.htm",
+        "sourceDate": "2015-08-02",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.056587,
+          30.5537974
+        ]
+      },
+      "properties": {
+        "id": "houziyan",
+        "name": "猴子岩水电站",
+        "basin": "大渡河",
+        "normalLevelM": 1842,
+        "damHeightM": 223.5,
+        "totalStorageBillionM3": 0.706,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源集团·猴子岩大坝国际里程碑工程",
+        "sourceUrl": "https://www.chnenergy.com.cn/gjnyjtww/chnjcxw/202309/7fb6ccb69d654fbb82e1d433567f9bc2.shtml",
+        "sourceDate": "2023-09-11",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.2199408,
+          29.4486789
+        ]
+      },
+      "properties": {
+        "id": "dagangshan",
+        "name": "大岗山水电站",
+        "basin": "大渡河",
+        "normalLevelM": 1130,
+        "damHeightM": 210,
+        "totalStorageBillionM3": 0.777,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源集团·大渡河投运大坝监测",
+        "sourceUrl": "https://www.chnenergy.com.cn/gjnyjtww/chnjcxw/202207/6623a283104b4ff2a811c574a84a4569.shtml",
+        "sourceDate": "2022-07-06",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.7351861,
+          29.3032029
+        ]
+      },
+      "properties": {
+        "id": "pubugou",
+        "name": "瀑布沟水电站",
+        "basin": "大渡河",
+        "normalLevelM": 850,
+        "damHeightM": 186,
+        "totalStorageBillionM3": 5.39,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源集团·大渡河水库消落任务",
+        "sourceUrl": "https://www.chnenergy.com.cn/gjnyjtww/chnjcxw/202405/5f3ac077eb6d4f0cb0aa6b0007af785e.shtml",
+        "sourceDate": "2024-05-10",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.9338362,
+          29.3005253
+        ]
+      },
+      "properties": {
+        "id": "shenxigou",
+        "name": "深溪沟水电站",
+        "basin": "大渡河",
+        "normalLevelM": 660,
+        "damHeightM": 84,
+        "totalStorageBillionM3": 0.0323,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源集团·大渡河投运大坝监测",
+        "sourceUrl": "https://www.chnenergy.com.cn/gjnyjtww/chnjcxw/202207/6623a283104b4ff2a811c574a84a4569.shtml",
+        "sourceDate": "2022-07-06",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0451126,
+          29.2355177
+        ]
+      },
+      "properties": {
+        "id": "zhentouba-i",
+        "name": "枕头坝一级水电站",
+        "basin": "大渡河",
+        "normalLevelM": 624,
+        "damHeightM": 86.5,
+        "totalStorageBillionM3": 0.112,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源集团·大渡河投运大坝监测",
+        "sourceUrl": "https://www.chnenergy.com.cn/gjnyjtww/chnjcxw/202207/6623a283104b4ff2a811c574a84a4569.shtml",
+        "sourceDate": "2022-07-06",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.2089701,
+          29.2374549
+        ]
+      },
+      "properties": {
+        "id": "shaping-ii",
+        "name": "沙坪二级水电站",
+        "basin": "大渡河",
+        "normalLevelM": 554,
+        "damHeightM": 63,
+        "totalStorageBillionM3": 0.02084,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源集团·大渡河联合生态调度",
+        "sourceUrl": "https://www.chnenergy.com.cn/gjnyjtww/chnjcxw/202507/f943a8c61522477d88b05297cfe36fec.shtml",
+        "sourceDate": "2025-07-16",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.3126321,
+          29.2981878
+        ]
+      },
+      "properties": {
+        "id": "gongzui",
+        "name": "龚嘴水电站",
+        "basin": "大渡河",
+        "normalLevelM": 528,
+        "damHeightM": 85.5,
+        "totalStorageBillionM3": 0.357,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源集团·龚嘴水电站大坝整治",
+        "sourceUrl": "https://www.chnenergy.com.cn/gjnyjtww/chnjcxw/202109/731d503719c54379a61334c788599a8e.shtml",
+        "sourceDate": "2021-09-16",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6332442,
+          29.2564822
+        ]
+      },
+      "properties": {
+        "id": "tongjiezi",
+        "name": "铜街子水电站",
+        "basin": "大渡河",
+        "normalLevelM": 475,
+        "damHeightM": 82,
+        "totalStorageBillionM3": 0.285,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源集团·龚嘴铜街子新增鱼道",
+        "sourceUrl": "https://www.chnenergy.com.cn/gjnyjtww/chnjcxw/202206/a80f28bf564b474998ea33b0fd9ca764.shtml",
+        "sourceDate": "2022-06-13",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.4940061,
+          31.0076033
+        ]
+      },
+      "properties": {
+        "id": "zipingpu",
+        "name": "紫坪铺水利枢纽",
+        "basin": "岷江",
+        "normalLevelM": 877,
+        "damHeightM": 156,
+        "totalStorageBillionM3": 1.112,
+        "normalAreaKm2": null,
+        "sourceTitle": "生态环境部·紫坪铺水利枢纽工程变更环评批复",
+        "sourceUrl": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk11/202312/t20231219_1059415.html",
+        "sourceDate": "2023-12-15",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7063378,
+          32.0932868
+        ]
+      },
+      "properties": {
+        "id": "tingzikou",
+        "name": "亭子口水利枢纽",
+        "basin": "嘉陵江",
+        "normalLevelM": 458,
+        "damHeightM": 110,
+        "totalStorageBillionM3": 4.067,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·长江上中游骨干水库联合调度",
+        "sourceUrl": "https://tgf.ctg.com.cn/uiFramework/commonResource/zip/pdf/pdf/%E7%A7%91%E5%AD%A6%E4%B8%96%E7%95%8C_%E5%86%8D%E8%B0%88%E4%B8%89%E5%B3%A1%EF%BC%882017%E5%B9%B4%E7%AC%AC5%E6%9C%9F%EF%BC%89.pdf",
+        "sourceDate": "2017-05-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6112874,
+          32.519324
+        ]
+      },
+      "properties": {
+        "id": "baozhusi",
+        "name": "宝珠寺水电站",
+        "basin": "嘉陵江",
+        "normalLevelM": 588,
+        "damHeightM": 132,
+        "totalStorageBillionM3": 2.55,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·长江上中游骨干水库联合调度",
+        "sourceUrl": "https://tgf.ctg.com.cn/uiFramework/commonResource/zip/pdf/pdf/%E7%A7%91%E5%AD%A6%E4%B8%96%E7%95%8C_%E5%86%8D%E8%B0%88%E4%B8%89%E5%B3%A1%EF%BC%882017%E5%B9%B4%E7%AC%AC5%E6%9C%9F%EF%BC%89.pdf",
+        "sourceDate": "2017-05-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1178223,
+          32.8119396
+        ]
+      },
+      "properties": {
+        "id": "bikou",
+        "name": "碧口水电站",
+        "basin": "嘉陵江",
+        "normalLevelM": 704,
+        "damHeightM": 101.8,
+        "totalStorageBillionM3": 0.521,
+        "normalAreaKm2": null,
+        "sourceTitle": "国家能源局·长江水系主要河流划分",
+        "sourceUrl": "https://www.nea.gov.cn/2011-11/21/c_131260325.htm",
+        "sourceDate": "2011-11-21",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.38861,
+          29.9075
+        ]
+      },
+      "properties": {
+        "id": "caojie",
+        "name": "草街航电枢纽",
+        "basin": "嘉陵江",
+        "normalLevelM": 203,
+        "damHeightM": 52.5,
+        "totalStorageBillionM3": 2.21,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·长江上中游骨干水库联合调度",
+        "sourceUrl": "https://tgf.ctg.com.cn/uiFramework/commonResource/zip/pdf/pdf/%E7%A7%91%E5%AD%A6%E4%B8%96%E7%95%8C_%E5%86%8D%E8%B0%88%E4%B8%89%E5%B3%A1%EF%BC%882017%E5%B9%B4%E7%AC%AC5%E6%9C%9F%EF%BC%89.pdf",
+        "sourceDate": "2017-05-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8568456,
+          26.8730251
+        ]
+      },
+      "properties": {
+        "id": "hongjiadu",
+        "name": "洪家渡水电站",
+        "basin": "乌江",
+        "normalLevelM": 1140,
+        "damHeightM": 179.5,
+        "totalStorageBillionM3": 4.947,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国华电集团·乌江梯级调度资料",
+        "sourceUrl": "https://www.chd.com.cn/site/2/2026-03-17/eff0ddab90e34ae0a87715de3db43694.html",
+        "sourceDate": "2026-03-17",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5601663,
+          27.2472128
+        ]
+      },
+      "properties": {
+        "id": "wujiangdu",
+        "name": "乌江渡水电站",
+        "basin": "乌江",
+        "normalLevelM": 760,
+        "damHeightM": 165,
+        "totalStorageBillionM3": 2.3,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·长江上中游骨干水库联合调度",
+        "sourceUrl": "https://tgf.ctg.com.cn/uiFramework/commonResource/zip/pdf/pdf/%E7%A7%91%E5%AD%A6%E4%B8%96%E7%95%8C_%E5%86%8D%E8%B0%88%E4%B8%89%E5%B3%A1%EF%BC%882017%E5%B9%B4%E7%AC%AC5%E6%9C%9F%EF%BC%89.pdf",
+        "sourceDate": "2017-05-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1554,
+          26.8545
+        ]
+      },
+      "properties": {
+        "id": "dongfeng",
+        "name": "东风水电站",
+        "basin": "乌江",
+        "normalLevelM": 970,
+        "damHeightM": 162,
+        "totalStorageBillionM3": 1.025,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国华电集团·乌江梯级调度资料",
+        "sourceUrl": "https://www.chd.com.cn/site/2/2026-03-17/eff0ddab90e34ae0a87715de3db43694.html",
+        "sourceDate": "2026-03-17",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3546941,
+          26.9143722
+        ]
+      },
+      "properties": {
+        "id": "suofengying",
+        "name": "索风营水电站",
+        "basin": "乌江",
+        "normalLevelM": 837,
+        "damHeightM": 115.8,
+        "totalStorageBillionM3": 0.2012,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国华电集团·乌江梯级调度资料",
+        "sourceUrl": "https://www.chd.com.cn/site/2/2026-03-17/eff0ddab90e34ae0a87715de3db43694.html",
+        "sourceDate": "2026-03-17",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6372692,
+          27.3705958
+        ]
+      },
+      "properties": {
+        "id": "goupitan",
+        "name": "构皮滩水电站",
+        "basin": "乌江",
+        "normalLevelM": 630,
+        "damHeightM": 232.5,
+        "totalStorageBillionM3": 6.45,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国华电集团·乌江梯级调度资料",
+        "sourceUrl": "https://www.chd.com.cn/site/2/2026-03-17/eff0ddab90e34ae0a87715de3db43694.html",
+        "sourceDate": "2026-03-17",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.986182,
+          27.6751591
+        ]
+      },
+      "properties": {
+        "id": "silin",
+        "name": "思林水电站",
+        "basin": "乌江",
+        "normalLevelM": 440,
+        "damHeightM": 117,
+        "totalStorageBillionM3": 1.205,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国华电集团·乌江梯级调度资料",
+        "sourceUrl": "https://www.chd.com.cn/site/2/2026-03-17/eff0ddab90e34ae0a87715de3db43694.html",
+        "sourceDate": "2026-03-17",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.47528,
+          28.49806
+        ]
+      },
+      "properties": {
+        "id": "shatuo",
+        "name": "沙沱水电站",
+        "basin": "乌江",
+        "normalLevelM": 365,
+        "damHeightM": 106,
+        "totalStorageBillionM3": 0.921,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国华电集团·乌江梯级调度资料",
+        "sourceUrl": "https://www.chd.com.cn/site/2/2026-03-17/eff0ddab90e34ae0a87715de3db43694.html",
+        "sourceDate": "2026-03-17",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3027054,
+          29.0793058
+        ]
+      },
+      "properties": {
+        "id": "pengshui",
+        "name": "彭水水电站",
+        "basin": "乌江",
+        "normalLevelM": 293,
+        "damHeightM": 116.5,
+        "totalStorageBillionM3": 1.465,
+        "normalAreaKm2": null,
+        "sourceTitle": "中国三峡集团·长江上中游骨干水库联合调度",
+        "sourceUrl": "https://tgf.ctg.com.cn/uiFramework/commonResource/zip/pdf/pdf/%E7%A7%91%E5%AD%A6%E4%B8%96%E7%95%8C_%E5%86%8D%E8%B0%88%E4%B8%89%E5%B3%A1%EF%BC%882017%E5%B9%B4%E7%AC%AC5%E6%9C%9F%EF%BC%89.pdf",
+        "sourceDate": "2017-05-01",
+        "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    }
+  ]
+}
