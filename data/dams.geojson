@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generatedAt": "2026-08-30T10:54:49Z",
+  "generatedAt": "2026-08-31T01:52:14Z",
   "coordinateNote": "坐标仅用于地图定位，来自 OpenStreetMap Nominatim；工程参数以各条官方来源为准。",
   "features": [
     {
@@ -115,7 +115,7 @@
         "sourceTitle": "中国三峡集团·水力发电业务",
         "sourceUrl": "https://www.ctg.com.cn/cypc/ywtx/slfdyw71/index.html",
         "sourceDate": "2026-07-24",
-        "coordinatesSource": "OpenStreetMap Nominatim"
+        "coordinatesSource": "公开坐标记录人工复核"
       }
     },
     {
@@ -161,7 +161,7 @@
         "sourceTitle": "中国三峡集团·金沙江中下游梯级资料",
         "sourceUrl": "https://www.ctg.com.cn/sxjt/template/page/jsjbhtsdz/styp.pdf",
         "sourceDate": "2015-12-01",
-        "coordinatesSource": "OpenStreetMap Nominatim"
+        "coordinatesSource": "公开坐标记录人工复核"
       }
     },
     {
@@ -276,7 +276,7 @@
         "sourceTitle": "雅砻江流域水电开发有限公司·两河口水电站",
         "sourceUrl": "https://www.ylhdc.com.cn/gtylj/gsyw/dlsc/webinfo/2020/10/1605515622357970.htm",
         "sourceDate": "2020-10-29",
-        "coordinatesSource": "OpenStreetMap Nominatim"
+        "coordinatesSource": "公开坐标记录人工复核"
       }
     },
     {
@@ -713,7 +713,7 @@
         "sourceTitle": "中国三峡集团·长江上中游骨干水库联合调度",
         "sourceUrl": "https://tgf.ctg.com.cn/uiFramework/commonResource/zip/pdf/pdf/%E7%A7%91%E5%AD%A6%E4%B8%96%E7%95%8C_%E5%86%8D%E8%B0%88%E4%B8%89%E5%B3%A1%EF%BC%882017%E5%B9%B4%E7%AC%AC5%E6%9C%9F%EF%BC%89.pdf",
         "sourceDate": "2017-05-01",
-        "coordinatesSource": "OpenStreetMap Nominatim"
+        "coordinatesSource": "公开坐标记录人工复核"
       }
     },
     {
@@ -782,7 +782,7 @@
         "sourceTitle": "中国华电集团·乌江梯级调度资料",
         "sourceUrl": "https://www.chd.com.cn/site/2/2026-03-17/eff0ddab90e34ae0a87715de3db43694.html",
         "sourceDate": "2026-03-17",
-        "coordinatesSource": "OpenStreetMap Nominatim"
+        "coordinatesSource": "公开坐标记录人工复核"
       }
     },
     {
@@ -874,7 +874,7 @@
         "sourceTitle": "中国华电集团·乌江梯级调度资料",
         "sourceUrl": "https://www.chd.com.cn/site/2/2026-03-17/eff0ddab90e34ae0a87715de3db43694.html",
         "sourceDate": "2026-03-17",
-        "coordinatesSource": "OpenStreetMap Nominatim"
+        "coordinatesSource": "公开坐标记录人工复核"
       }
     },
     {
@@ -898,6 +898,52 @@
         "sourceUrl": "https://tgf.ctg.com.cn/uiFramework/commonResource/zip/pdf/pdf/%E7%A7%91%E5%AD%A6%E4%B8%96%E7%95%8C_%E5%86%8D%E8%B0%88%E4%B8%89%E5%B3%A1%EF%BC%882017%E5%B9%B4%E7%AC%AC5%E6%9C%9F%EF%BC%89.pdf",
         "sourceDate": "2017-05-01",
         "coordinatesSource": "OpenStreetMap Nominatim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8904694,
+          29.2746813
+        ]
+      },
+      "properties": {
+        "id": "yinpan",
+        "name": "银盘水电站",
+        "basin": "乌江",
+        "normalLevelM": 215,
+        "damHeightM": 78.5,
+        "totalStorageBillionM3": 0.32,
+        "normalAreaKm2": null,
+        "sourceTitle": "重庆市生态环境局·乌江白马至彭水航道整治工程环境影响报告书",
+        "sourceUrl": "https://sthjj.cq.gov.cn/zwgk_249/zfxxgkzl/fdzdgknr/hjyxpj/pzgcxx/sljsxmhpxxgg/202211/P020221123429221652540.pdf",
+        "sourceDate": "2022-11-23",
+        "coordinatesSource": "公开坐标记录人工复核"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.537068,
+          29.406186
+        ]
+      },
+      "properties": {
+        "id": "baima",
+        "name": "白马航电枢纽",
+        "basin": "乌江",
+        "normalLevelM": 184,
+        "damHeightM": 87.5,
+        "totalStorageBillionM3": 0.374,
+        "normalAreaKm2": null,
+        "sourceTitle": "重庆市水利局·乌江白马航电枢纽工程截流阶段建设征地移民安置验收",
+        "sourceUrl": "https://slj.cq.gov.cn/sy_250/zhxx/202602/t20260209_15398925.html",
+        "sourceDate": "2026-02-09",
+        "coordinatesSource": "公开坐标记录人工复核"
       }
     }
   ]
