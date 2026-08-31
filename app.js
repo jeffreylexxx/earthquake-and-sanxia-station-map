@@ -1,6 +1,7 @@
 const DATA_PATHS = {
   dams: "./data/dams.geojson",
   earthquakes: "./data/earthquakes.geojson",
+  geohazards: "./data/geohazards.geojson",
   waterways: "./data/waterways.geojson",
   waterLevels: "./data/water-levels.json",
   metadata: "./data/metadata.json",
@@ -12,18 +13,19 @@ const EMPTY_COLLECTION = { type: "FeatureCollection", features: [] };
 const appState = {
   dams: EMPTY_COLLECTION,
   earthquakes: EMPTY_COLLECTION,
+  geohazards: EMPTY_COLLECTION,
   waterways: EMPTY_COLLECTION,
   waterLevels: { comparisonDays: 30, dams: {}, sources: {} },
   metadata: {},
   map: null,
   filters: { magnitude: 3, maxDepth: 100, startYear: "all", basin: "all" },
 };
-let damHoverPopup = null;
+let mapHoverPopup = null;
 
 const dom = Object.fromEntries(
   [
-    "lastUpdated", "damCount", "quakeCount", "recentCount", "maxMagnitude",
-    "toggleDams", "toggleQuakes", "toggleRecent", "toggleWaterways",
+    "lastUpdated", "damCount", "quakeCount", "hazardCount", "recentCount", "maxMagnitude",
+    "toggleDams", "toggleQuakes", "toggleHazards", "toggleRecent", "toggleWaterways",
     "magnitudeRange", "magnitudeValue", "depthRange", "depthValue",
     "yearSelect", "basinSelect", "resetFilters", "detailDrawer", "drawerClose",
     "detailType", "detailTitle", "detailKicker", "detailBody", "loadingScreen",
@@ -96,6 +98,29 @@ function filteredEarthquakes() {
       const year = new Date(props.time || props.timestamp).getUTCFullYear();
       return Number(props.mag) >= magnitude
         && Number(props.depthKm) <= maxDepth
+        && (startYear === "all" || year >= Number(startYear))
+        && (basin === "all" || props.nearestBasin === basin);
+    }),
+  };
+}
+
+function isWithinRollingDecade(feature) {
+  const value = feature.properties?.date || feature.properties?.time;
+  const time = Date.parse(value);
+  const cutoff = new Date();
+  cutoff.setUTCHours(0, 0, 0, 0);
+  cutoff.setUTCFullYear(cutoff.getUTCFullYear() - 10);
+  return Number.isFinite(time) && time >= cutoff.getTime() && time <= Date.now();
+}
+
+function filteredGeohazards() {
+  const { startYear, basin } = appState.filters;
+  return {
+    ...appState.geohazards,
+    features: appState.geohazards.features.filter((feature) => {
+      const props = feature.properties || {};
+      const year = new Date(props.date).getUTCFullYear();
+      return isWithinRollingDecade(feature)
         && (startYear === "all" || year >= Number(startYear))
         && (basin === "all" || props.nearestBasin === basin);
     }),
@@ -387,6 +412,29 @@ function openQuakeDetail(feature) {
   showDrawer();
 }
 
+function openGeohazardDetail(feature) {
+  const props = feature.properties;
+  const area = props.affectedAreaKm2 == null
+    ? "官方资料未单列"
+    : `${formatNumber(props.affectedAreaKm2, 3)} km²`;
+  dom.detailType.textContent = "GEOHAZARD EVENT";
+  dom.detailTitle.textContent = props.title || props.hazardLabel || "地质灾害事件";
+  dom.detailKicker.textContent = `${props.hazardLabel || "滑坡／泥石流"} · ${props.place || "地点未注明"}`;
+  dom.detailBody.innerHTML = detailRows([
+    ["发生日期", formatDate(props.date)],
+    ["受灾面积", area],
+    ["官方范围记录", escapeHtml(props.affectedAreaNote || "官方公开资料未注明")],
+    ["影响概况", escapeHtml(props.impactSummary || "官方公开资料未注明")],
+    ["最近水坝", escapeHtml(props.nearestDam || "未计算")],
+    ["距最近水坝", props.nearestDamKm == null ? "未计算" : `${formatNumber(props.nearestDamKm)} km（直线）`],
+    ["地点定位精度", escapeHtml(props.coordinatePrecision || "区域定位")],
+    ["资料发布日期", escapeHtml(props.sourceDate || "未注明")],
+  ]) + (props.sourceUrl
+    ? `<a class="source-link" href="${escapeHtml(props.sourceUrl)}" target="_blank" rel="noreferrer">查看事故资料来源：${escapeHtml(props.sourceTitle || "原始资料")}</a>`
+    : "");
+  showDrawer();
+}
+
 function showDrawer() {
   dom.detailDrawer.classList.add("is-open");
   dom.detailDrawer.setAttribute("aria-hidden", "false");
@@ -461,6 +509,25 @@ function addMapData() {
     },
   });
 
+  map.addSource("geohazards", { type: "geojson", data: filteredGeohazards() });
+  map.addLayer({
+    id: "geohazard-halos", type: "circle", source: "geohazards",
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 8, 8, 13],
+      "circle-color": ["match", ["get", "hazardType"], "debris-flow", "rgba(179,106,34,.14)", "rgba(132,71,91,.14)"],
+      "circle-stroke-color": ["match", ["get", "hazardType"], "debris-flow", "#b36a22", "#84475b"],
+      "circle-stroke-width": 1,
+    },
+  });
+  map.addLayer({
+    id: "geohazard-points", type: "circle", source: "geohazards",
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 4.5, 8, 7.5],
+      "circle-color": ["match", ["get", "hazardType"], "debris-flow", "#b36a22", "#84475b"],
+      "circle-stroke-color": "#f2f0e9", "circle-stroke-width": 1.5,
+    },
+  });
+
   map.addSource("dams", { type: "geojson", data: appState.dams });
   map.addLayer({
     id: "dam-halos", type: "circle", source: "dams",
@@ -473,6 +540,8 @@ function addMapData() {
   map.on("click", "dam-points", (event) => openDamDetail(event.features[0]));
   map.on("click", "quake-points", (event) => openQuakeDetail(event.features[0]));
   map.on("click", "recent-halo", (event) => openQuakeDetail(event.features[0]));
+  map.on("click", "geohazard-points", (event) => openGeohazardDetail(event.features[0]));
+  map.on("click", "geohazard-halos", (event) => openGeohazardDetail(event.features[0]));
   map.on("click", "quake-clusters", async (event) => {
     const feature = event.features[0];
     const zoom = await map.getSource("earthquakes").getClusterExpansionZoom(feature.properties.cluster_id);
@@ -480,16 +549,28 @@ function addMapData() {
   });
   map.on("mouseenter", "dam-points", (event) => {
     const feature = event.features[0];
-    damHoverPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12 })
+    mapHoverPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12 })
       .setLngLat(feature.geometry.coordinates)
       .setHTML(`<strong>${feature.properties.name}</strong><br><small>点击查看工程参数</small>`)
       .addTo(map);
   });
   map.on("mouseleave", "dam-points", () => {
-    if (damHoverPopup) damHoverPopup.remove();
-    damHoverPopup = null;
+    if (mapHoverPopup) mapHoverPopup.remove();
+    mapHoverPopup = null;
   });
-  ["dam-points", "quake-points", "recent-halo", "quake-clusters"].forEach((layer) => {
+  map.on("mouseenter", "geohazard-points", (event) => {
+    const feature = event.features[0];
+    if (mapHoverPopup) mapHoverPopup.remove();
+    mapHoverPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12 })
+      .setLngLat(feature.geometry.coordinates)
+      .setHTML(`<strong>${escapeHtml(feature.properties.title)}</strong><br><small>${escapeHtml(feature.properties.hazardLabel)} · ${formatDate(feature.properties.date)}</small>`)
+      .addTo(map);
+  });
+  map.on("mouseleave", "geohazard-points", () => {
+    if (mapHoverPopup) mapHoverPopup.remove();
+    mapHoverPopup = null;
+  });
+  ["dam-points", "quake-points", "recent-halo", "quake-clusters", "geohazard-points", "geohazard-halos"].forEach((layer) => {
     map.on("mouseenter", layer, () => { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", layer, () => { map.getCanvas().style.cursor = "crosshair"; });
   });
@@ -498,6 +579,7 @@ function addMapData() {
 function updateSourcesAndStats() {
   const dams = filteredDams();
   const quakes = filteredEarthquakes();
+  const hazards = filteredGeohazards();
   if (appState.map?.getSource("dams")) appState.map.getSource("dams").setData(dams);
   if (appState.map?.getSource("earthquakes")) appState.map.getSource("earthquakes").setData(quakes);
   if (appState.map?.getSource("recent-earthquakes")) {
@@ -509,9 +591,11 @@ function updateSourcesAndStats() {
   if (appState.map?.getSource("third-month-earthquakes")) {
     appState.map.getSource("third-month-earthquakes").setData({ ...quakes, features: quakes.features.filter(isThirdMonth) });
   }
+  if (appState.map?.getSource("geohazards")) appState.map.getSource("geohazards").setData(hazards);
   const magnitudes = quakes.features.map((feature) => Number(feature.properties.mag)).filter(Number.isFinite);
   dom.damCount.textContent = dams.features.length.toLocaleString("zh-CN");
   dom.quakeCount.textContent = quakes.features.length.toLocaleString("zh-CN");
+  dom.hazardCount.textContent = hazards.features.length.toLocaleString("zh-CN");
   dom.recentCount.textContent = quakes.features.filter(isRecent).length.toLocaleString("zh-CN");
   dom.maxMagnitude.textContent = magnitudes.length ? Math.max(...magnitudes).toFixed(1) : "—";
 }
@@ -542,6 +626,7 @@ function bindControls() {
   dom.basinSelect.addEventListener("change", () => { appState.filters.basin = dom.basinSelect.value; updateSourcesAndStats(); });
   dom.toggleDams.addEventListener("change", () => setLayerVisibility(["dam-halos", "dam-points"], dom.toggleDams.checked));
   dom.toggleQuakes.addEventListener("change", () => setLayerVisibility(["quake-clusters", "quake-cluster-count", "quake-points"], dom.toggleQuakes.checked));
+  dom.toggleHazards.addEventListener("change", () => setLayerVisibility(["geohazard-halos", "geohazard-points"], dom.toggleHazards.checked));
   dom.toggleRecent.addEventListener("change", () => setLayerVisibility(["recent-halo", "previous-month-halo", "third-month-halo"], dom.toggleRecent.checked));
   dom.toggleWaterways.addEventListener("change", () => setLayerVisibility(["waterways-line"], dom.toggleWaterways.checked));
   dom.drawerClose.addEventListener("click", closeDrawer);
@@ -570,8 +655,8 @@ function populateSelects() {
 
 async function init() {
   try {
-    [appState.dams, appState.earthquakes, appState.waterways, appState.waterLevels, appState.metadata] = await Promise.all([
-      loadJson(DATA_PATHS.dams), loadJson(DATA_PATHS.earthquakes), loadJson(DATA_PATHS.waterways),
+    [appState.dams, appState.earthquakes, appState.geohazards, appState.waterways, appState.waterLevels, appState.metadata] = await Promise.all([
+      loadJson(DATA_PATHS.dams), loadJson(DATA_PATHS.earthquakes), loadJson(DATA_PATHS.geohazards), loadJson(DATA_PATHS.waterways),
       loadJson(DATA_PATHS.waterLevels, { comparisonDays: 30, dams: {}, sources: {} }), loadJson(DATA_PATHS.metadata, {}),
     ]);
     populateSelects();

@@ -8,6 +8,8 @@
   --dam: #075d73;
   --quake: #e85d35;
   --recent: #ffb43b;
+  --landslide: #84475b;
+  --debris-flow: #b36a22;
   --panel: rgba(246, 244, 237, 0.94);
   --shadow: 0 22px 60px rgba(7, 34, 47, 0.16);
   --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
@@ -69,6 +71,7 @@ button, select, input { accent-color: var(--quake); }
 .eyebrow { margin: 0 0 15px; color: var(--ink-soft); font-size: 9px; font-weight: 700; letter-spacing: .2em; }
 .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .metric-grid article { display: flex; flex-direction: column; min-height: 82px; padding: 14px; background: var(--paper); }
+.metric-grid article:last-child:nth-child(odd) { grid-column: 1 / -1; min-height: 68px; }
 .metric-grid strong { font: 700 28px/1 var(--serif); font-variant-numeric: tabular-nums; }
 .metric-grid span { margin-top: auto; font-size: 10px; color: var(--ink-soft); }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; }
@@ -81,6 +84,7 @@ button, select, input { accent-color: var(--quake); }
 .dam-mark { background: var(--dam); box-shadow: 0 0 0 3px rgba(7,93,115,.12); }
 .quake-mark { background: var(--quake); }
 .recent-mark { background: var(--recent); box-shadow: 0 0 0 4px rgba(255,180,59,.2); }
+.hazard-mark { background: linear-gradient(90deg, var(--landslide) 0 50%, var(--debris-flow) 50%); box-shadow: 0 0 0 3px rgba(132,71,91,.1); }
 .legend-line { width: 15px; height: 2px; background: var(--river); }
 
 .field-label { display: flex; justify-content: space-between; margin: 16px 0 8px; font-size: 11px; color: var(--ink-soft); }
@@ -124,10 +128,14 @@ select { width: 100%; height: 38px; padding: 0 10px; border: 1px solid var(--lin
 .depth-swatch.shallow { background: #ef5d3b; }
 .depth-swatch.deep { background: #84475b; }
 .recency-caption { top: 18px; bottom: auto; }
+.hazard-caption { top: 62px; bottom: auto; }
 .recency-ring { width: 11px; height: 11px; border: 2px solid currentColor; border-radius: 50%; background: transparent; }
 .ring-recent { color: var(--recent); box-shadow: 0 0 0 3px rgba(255,180,59,.13); }
 .ring-previous { color: #4d72c9; box-shadow: 0 0 0 3px rgba(77,114,201,.1); }
 .ring-third { color: #4b9b6c; box-shadow: 0 0 0 3px rgba(75,155,108,.1); }
+.hazard-dot { width: 10px; height: 10px; border: 1.5px solid var(--paper); border-radius: 50%; box-shadow: 0 0 0 1px currentColor; }
+.landslide-dot { color: var(--landslide); background: var(--landslide); }
+.debris-dot { color: var(--debris-flow); background: var(--debris-flow); }
 
 .detail-drawer {
   position: absolute;
@@ -152,7 +160,7 @@ select { width: 100%; height: 38px; padding: 0 10px; border: 1px solid var(--lin
 .detail-list { margin: 0; }
 .detail-row { display: grid; grid-template-columns: 116px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
 .detail-row dt { color: var(--ink-soft); font-size: 10px; }
-.detail-row dd { margin: 0; font: 600 12px/1.5 var(--sans); text-align: right; }
+.detail-row dd { margin: 0; overflow-wrap: anywhere; font: 600 12px/1.5 var(--sans); text-align: right; text-wrap: pretty; }
 .source-link { display: inline-flex; margin-top: 20px; color: var(--quake); font-size: 11px; text-decoration: none; border-bottom: 1px solid currentColor; }
 .new-badge { display: inline-flex; margin-left: 8px; padding: 3px 7px; color: #673500; background: #ffd27a; font-size: 9px; font-weight: 700; letter-spacing: .08em; vertical-align: middle; }
 
@@ -227,6 +235,7 @@ select { width: 100%; height: 38px; padding: 0 10px; border: 1px solid var(--lin
   .mobile-filter-button { display: block; position: absolute; right: 12px; bottom: 14px; z-index: 8; height: 42px; padding: 0 16px; border: 1px solid var(--line); color: var(--ink); background: var(--panel); box-shadow: 0 8px 24px rgba(16,45,60,.12); }
   .map-caption { left: 10px; bottom: 64px; max-width: calc(100vw - 20px); }
   .recency-caption { top: 10px; bottom: auto; }
+  .hazard-caption { top: 54px; bottom: auto; }
   .detail-drawer { top: auto; right: 10px; bottom: 10px; left: 10px; width: auto; max-height: 62vh; transform: translateY(calc(100% + 20px)); }
   .detail-drawer.is-open { transform: translateY(0); }
   .loading-screen { inset: 66px 0 0; }
