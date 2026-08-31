@@ -7,7 +7,7 @@
       "stationName": "三峡水库上游水位",
       "samplePolicy": "每日一个页面汇总值；展示时以最新可获得记录日为锚点",
       "latestAvailableDate": "2026-07-31",
-      "lastCheckedAt": "2026-08-30T12:05:46Z",
+      "lastCheckedAt": "2026-08-31T07:03:00Z",
       "records": [
         {
           "date": "2025-05-08",
@@ -2813,7 +2813,7 @@
       ]
     }
   },
-  "generatedAt": "2026-08-30T12:05:46Z",
+  "generatedAt": "2026-08-31T07:03:00Z",
   "sources": {
     "sanxiatansuo-waterlist": {
       "title": "三峡探索·水情信息",
@@ -2821,7 +2821,7 @@
       "tier": "第三方汇总",
       "licence": "页面未声明开放数据许可",
       "note": "记录不可视为官方发布值；页面提供三峡上游水位日记录。",
-      "retrievedAt": "2026-08-30T12:05:46Z"
+      "retrievedAt": "2026-08-31T07:03:00Z"
     },
     "cjh-official-reference": {
       "title": "长江水文网·实时水情",
@@ -2831,7 +2831,5 @@
     }
   },
   "coverageNote": "所有水坝均展示水位图表组件；仅有可核验日记录的水坝绘制曲线，禁止模拟或插值补齐。",
-  "fetchWarnings": [
-    "page 9: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)>"
-  ]
+  "fetchWarnings": []
 }
