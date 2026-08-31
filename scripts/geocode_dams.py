@@ -29,6 +29,8 @@ COORDINATE_OVERRIDES = {
     "caojie": [106.38861, 29.90750],
     "dongfeng": [106.15540, 26.85450],
     "shatuo": [108.47528, 28.49806],
+    "yinpan": [107.8904694, 29.2746813],
+    "baima": [107.537068, 29.406186],
 }
 
 
@@ -75,7 +77,9 @@ def main() -> None:
                 time.sleep(1.05)
 
         properties = {key: value for key, value in seed.items() if key not in {"query"}}
-        properties["coordinatesSource"] = "OpenStreetMap Nominatim"
+        properties["coordinatesSource"] = (
+            "公开坐标记录人工复核" if seed["id"] in COORDINATE_OVERRIDES else "OpenStreetMap Nominatim"
+        )
         features.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": coordinates}, "properties": properties})
 
     output = {

@@ -21,7 +21,7 @@ ROUTES = {
     "大渡河": ["houziyan", "dagangshan", "pubugou", "shenxigou", "zhentouba-i", "shaping-ii", "gongzui", "tongjiezi", "xiangjiaba"],
     "岷江": ["zipingpu", "xiangjiaba"],
     "嘉陵江": ["bikou", "baozhusi", "tingzikou", "caojie", "three-gorges"],
-    "乌江": ["hongjiadu", "dongfeng", "suofengying", "wujiangdu", "goupitan", "silin", "shatuo", "pengshui", "three-gorges"],
+    "乌江": ["hongjiadu", "dongfeng", "suofengying", "wujiangdu", "goupitan", "silin", "shatuo", "pengshui", "yinpan", "baima", "three-gorges"],
 }
 
 
