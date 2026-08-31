@@ -1,6 +1,7 @@
 # 江震图谱：三峡与长江上游水坝、地震及地质灾害观察
 
 一个适合部署到 GitHub Pages 的中文交互地图，用于观察三峡、金沙江及长江上游主要支流重点水坝、地震与重大地质灾害记录的空间关系。
+演示预览网页 https://jeffreylexxx.github.io/earthquake-and-sanxia-station-map/
 
 ## 地图内容
 
