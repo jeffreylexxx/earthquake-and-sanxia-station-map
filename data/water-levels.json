@@ -7,7 +7,7 @@
       "stationName": "三峡水库上游水位",
       "samplePolicy": "每日一个页面汇总值；展示时以最新可获得记录日为锚点",
       "latestAvailableDate": "2026-07-31",
-      "lastCheckedAt": "2026-09-02T05:51:16Z",
+      "lastCheckedAt": "2026-09-03T05:50:32Z",
       "records": [
         {
           "date": "2025-05-08",
@@ -2813,7 +2813,7 @@
       ]
     }
   },
-  "generatedAt": "2026-09-02T05:51:16Z",
+  "generatedAt": "2026-09-03T05:50:32Z",
   "sources": {
     "sanxiatansuo-waterlist": {
       "title": "三峡探索·水情信息",
@@ -2821,7 +2821,7 @@
       "tier": "第三方汇总",
       "licence": "页面未声明开放数据许可",
       "note": "记录不可视为官方发布值；页面提供三峡上游水位日记录。",
-      "retrievedAt": "2026-09-02T05:51:16Z"
+      "retrievedAt": "2026-09-03T05:50:32Z"
     },
     "cjh-official-reference": {
       "title": "长江水文网·实时水情",
