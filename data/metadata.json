@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-06T05:59:00Z",
+  "updatedAt": "2026-09-06T22:54:33Z",
   "damCount": 41,
   "earthquakeCount": 600,
-  "recent30DayCount": 6,
+  "recent30DayCount": 5,
   "geohazardCount": 11,
   "rolling10YearGeohazardCount": 11,
   "waterLevelRecordCount": 449,
