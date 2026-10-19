@@ -6,8 +6,8 @@
       "status": "available",
       "stationName": "三峡水库上游水位",
       "samplePolicy": "每日一个页面汇总值；展示时以最新可获得记录日为锚点",
-      "latestAvailableDate": "2026-09-14",
-      "lastCheckedAt": "2026-10-18T05:56:17Z",
+      "latestAvailableDate": "2026-09-30",
+      "lastCheckedAt": "2026-10-19T06:14:43Z",
       "records": [
         {
           "date": "2025-05-08",
@@ -2972,6 +2972,102 @@
           "levelM": 160.42,
           "sourceId": "sanxiatansuo-waterlist",
           "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-15",
+          "levelM": 160.55,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-16",
+          "levelM": 160.65,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-17",
+          "levelM": 160.94,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-18",
+          "levelM": 161.27,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-19",
+          "levelM": 161.63,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-20",
+          "levelM": 161.82,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-21",
+          "levelM": 161.93,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-22",
+          "levelM": 162.15,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-23",
+          "levelM": 162.48,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-24",
+          "levelM": 162.86,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-25",
+          "levelM": 163.39,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-26",
+          "levelM": 164.14,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-27",
+          "levelM": 165.03,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-28",
+          "levelM": 165.78,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-29",
+          "levelM": 166.45,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
+        },
+        {
+          "date": "2026-09-30",
+          "levelM": 167.12,
+          "sourceId": "sanxiatansuo-waterlist",
+          "observationType": "第三方页面每日汇总值"
         }
       ],
       "monthlyRecords": [
@@ -3089,15 +3185,15 @@
         },
         {
           "month": "2026-09",
-          "date": "2026-09-14",
-          "levelM": 160.42,
+          "date": "2026-09-30",
+          "levelM": 167.12,
           "sourceId": "sanxiatansuo-waterlist",
           "observationType": "月内最后一个可核验日值"
         }
       ]
     }
   },
-  "generatedAt": "2026-10-18T05:56:17Z",
+  "generatedAt": "2026-10-19T06:14:43Z",
   "sources": {
     "sanxiatansuo-waterlist": {
       "title": "三峡探索·水情信息",
@@ -3105,7 +3201,7 @@
       "tier": "第三方汇总",
       "licence": "页面未声明开放数据许可",
       "note": "记录不可视为官方发布值；页面提供三峡上游水位日记录。",
-      "retrievedAt": "2026-10-18T05:56:17Z"
+      "retrievedAt": "2026-10-19T06:14:43Z"
     },
     "cjh-official-reference": {
       "title": "长江水文网·实时水情",
