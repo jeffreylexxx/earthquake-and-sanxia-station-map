@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-28T03:20:12Z",
+  "updatedAt": "2026-11-28T08:55:27Z",
   "damCount": 41,
   "earthquakeCount": 619,
   "recent30DayCount": 4,
   "geohazardCount": 11,
   "rolling10YearGeohazardCount": 11,
   "waterLevelRecordCount": 515,
-  "waterLevelUpdatedAt": "2026-11-27T09:41:53Z",
+  "waterLevelUpdatedAt": "2026-11-28T08:55:27Z",
   "note": "地震、水位及地质灾害记录永久保留；地质灾害默认显示滚动十年，缺失受灾面积与水位不推算。"
 }
